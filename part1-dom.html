@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vanilla DOM Manipulation Exercises</title>
+    <link rel="stylesheet" href="style.css">
     <style media="screen">
         :root {
             --color1: #ee6055;
@@ -78,7 +79,6 @@
 </head>
 
 <body>
-    <main>
     <!-- start of HTML demo -->
     <h1>Vanilla DOM Manipulation</h1>
     <p id="p1">This is a <em>test</em> of the DOM</p>
@@ -101,13 +101,6 @@
                 <label for="modifyBtn">Simple Modification</label>
                 <input type="button" id="modifyBtn" value="Modify">
                 <input type="button" id="advanced_modifyBtn" value="Advance Modify">
-
-                <!--
-            Q2) Add a new button "Advanced Modify" that does the following:
-            1.  Changes the text of the h1 to say "DOM Manipulation is Fun!"
-            2.  Changes the color of the h1 to a random dark color from one of the 5 CSS variables defined in the style tag above.  You can use the Math.random() function.
-            3. Sets the class of the p tag to "shmancy" so that does a new CSS text effect of your own design. You can find something on the internet (please cite the URL of your inspiration) or make up your own.  You can use the classList property as you like, but make sure you toggle the animation class on and off every time you push the button.
-        -->
             </fieldset>
 
             <fieldset>
@@ -126,34 +119,42 @@
                 <input type="text" id="tagInput">
                 <input type="button" id="modifyAddBtn" value="Add">
                 <div id="output-area" style="border: 1px solid black; padding: 10px;"></div>
-                <!--
-            Q3) Add a select menu that allows you to add a new element to the DOM.  The select menu should have the following options: Text Node, Comment, and Element. When you select one of these options and click the button, the appropriate element should be added to the DOM.  You may want to define an output tag to put the newly created elements in it and style it in a fashion with a border or background color, so you can tell it is new content.  You will need a corresponding text field to define the contents of the text node, comment text, or tag name you want to insert.  By default set the text of any added element to say "New Element" or "New Comment" or "New Text Node" depending on the type of element you are adding but add in the current date and time using a JS Date object.  You can use the toLocaleString() method to get a nicely formatted date and time string.
-
-        -->
+        
             </fieldset>
 
             <fieldset>
                 <legend>Remove</legend>
                 <label for="removeBtn">Simple Delete</label>
                 <input type="button" id="removeBtn" value="Remove">
-                <!--
+                <input type="button" id="safeDeleteBtn" value="Safe Delete">
+                
+                <label for="deleteSelector">Delete by Selector:</label>
+                <input type="text" id="deleteSelector">
+                <input type="button" id="deleteBySelectorBtn" value="Delete by Selector">
 
-          Q4a) Safe Delete
-            add a new button to do a safe delete that deletes all the elements from the bottom up but skips over deleting the buttons and things in the section with all these demo controls
-
-          Q4b) Delete by selector
-            add a text field and a button to the fieldset that allows you to type a CSS selector and then delete all the elements that match that selector.
-        -->
             </fieldset>
 
             <fieldset>
                 <legend>Clone</legend>
-                <!--
-          Q5a) Add a button "Basic Clone" that clones the p tag and adds it to the DOM.  You can add it to the same area you added new content.  Be cautious with your cloning to modify attributes
+                <label for="basicCloneBtn">Basic Clone</label>
+                <input type="button" id="basicCloneBtn" value="Basic Clone">
+            </fieldset>
 
-          Q5b) Add template at the bottom of the page with some HTML markup representing a "card" that would have and title, image, a short text paragraph and link.  This template should be hidden from view using the <template> tag.  Add a button "Advanced Clone" that clones the template and adds it to the DOM.  Generate some boilerplate text to put in the title and text put add in some random value or number, so you can tell each new card that you are adding.  Find a few images at Unsplash or other sites to use as the card image to make it interesting.  The card design is up to you, and you are more than welcome to get inspiration from online for design.  These cards might be what you could use for a portfolio or gallery of some sort so have fun as if you do this correctly, you can use for your portfolio site eventually.  Make sure you are using semantic HTML and simple CSS to style the cards.  You should use CSS variables.
+            <template id="cardTemplate">
+                <article class="card">
+                    <h3 class="card-title">Cardie 1</h3>
+                    <img src="https://source.unsplash.com/random/400x200" alt="Card Image">
+                    <p class="card-text">Card description goes here.</p>
+                    <a href="#" class="card-link">Read More</a>
+                </article>
+            </template>
+            <fieldset>
+                <legend>Clone</legend>
+                <label for="basicCloneBtn">Basic Clone</label>
+                <input type="button" id="basicCloneBtn" value="Basic Clone">
 
-        -->
+                <label for="advancedCloneBtn">Advanced Clone</label>
+                <input type="button" id="advancedCloneBtn" value="Advanced Clone">
             </fieldset>
 
         </form>
@@ -166,8 +167,6 @@
 
     <!-- put all your new code in this dom.js file -->
     <script src="dom.js"></script>
-        </main>
 </body>
-    
 
 </html>
