@@ -153,10 +153,10 @@ function advancedModify() {
 
     heading1.style.color = `var(${randColor})`;
 
-    let p = document.querySelector('p');
-    p.classList.add('shmancy');
+    let p = document.querySelector('p#p1'); 
+    p.textContent = "Dom Manipulation is Fun!";
 
-    p.classList.toggle('fancy');
+    p.classList.toggle('shmancy');
 }
 
 function add() {
